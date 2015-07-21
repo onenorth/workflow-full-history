@@ -37,16 +37,14 @@
     <ValidationSettingsFilePath>.\OneNorth.WorkflowFullHistory.Deploy.Core_Release.xml</ValidationSettingsFilePath>
     <InstallSitecoreConnector>False</InstallSitecoreConnector>
     <DisableFileDeployment>True</DisableFileDeployment>
-    <PackageName>OneNorth.WorkflowFullHistory.Deploy.Core</PackageName>
+    <PackageName>OneNorth.WorkflowFullHistory</PackageName>
     <GeneratePackage>True</GeneratePackage>
     <SeperateFilesAndItems>False</SeperateFilesAndItems>
     <AddDateTimeToPackageName>False</AddDateTimeToPackageName>
     <PackageAuthor>One North Interactive</PackageAuthor>
     <PackagePublisher>One North Interactive</PackagePublisher>
-    <PackageReadme>
-    </PackageReadme>
-    <PackageVersion>
-    </PackageVersion>
+    <PackageReadme>See https://github.com/onenorth/workflow-full-history for further information</PackageReadme>
+    <PackageVersion>1.0.0</PackageVersion>
     <SitecoreAssemblyPath>../../lib</SitecoreAssemblyPath>
   </PropertyGroup>
   <ItemGroup>
@@ -97,4 +95,18 @@
     </SitecoreItem>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" />
+  <ItemGroup>
+    <AssembliesPath Include="..\Website\bin\OneNorth.WorkflowFullHistory.dll" />
+  </ItemGroup>
+  <Target Name="BeforeSitecoreBuild">
+    <GetAssemblyIdentity AssemblyFiles="@(AssembliesPath)">
+      <Output TaskParameter="Assemblies" ItemName="AssemblyVersion" />
+    </GetAssemblyIdentity>
+    <CreateProperty Value="%(AssemblyVersion.Version)">
+      <Output TaskParameter="Value" PropertyName="PackageVersion" />
+    </CreateProperty>
+	<CreateProperty Value="OneNorth.WorkflowFullHistory.%(AssemblyVersion.Version)">
+      <Output TaskParameter="Value" PropertyName="PackageName" />
+    </CreateProperty>
+  </Target>
 </Project>
