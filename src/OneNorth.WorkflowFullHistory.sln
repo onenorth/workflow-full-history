@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneNorth.WorkflowFullHistory", "Website\OneNorth.WorkflowFullHistory.csproj", "{5AE74C0F-10B2-401B-A6C1-374B0BE91033}"
 EndProject
-Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "OneNorth.WorkflowFullHistory.Deploy.Core", "OneNorth.WorkflowFullHistory.Deploy.Core\OneNorth.WorkflowFullHistory.Deploy.Core.scproj", "{E40D8AB2-6293-476C-B819-B0E3BFF2DE38}"
+Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "OneNorth.WorkflowFullHistory.Deploy.Core", "TDS.Core\OneNorth.WorkflowFullHistory.Deploy.Core.scproj", "{E40D8AB2-6293-476C-B819-B0E3BFF2DE38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

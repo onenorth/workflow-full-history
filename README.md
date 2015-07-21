@@ -5,9 +5,8 @@
 
 The Workflow Full History module displays all the history for each version of an item in a single pop-up.  This expands upon the Sitecore Provided Workflow / History link that only displays history for the current version.
 
-This module adds a **Full History** button to the **Workflow** group under the **Review** tab.
+This module adds a **Full History** button to the **Workflow** group under the **Review** tab. The Full History button only appears for items that are participating in workflow.
 ![Full History Button](https://raw.github.com/onenorth/workflow-full-history/master/img/WorkflowChunk.png)
-The Full History button only appears for items that are participating in workflow.
 
 Clicking the Full History button displays a pop-up with history for each version of the item.
 ![Full History Button](https://raw.github.com/onenorth/workflow-full-history/master/img/FullHistory.png)
