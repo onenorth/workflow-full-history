@@ -84,7 +84,7 @@ namespace OneNorth.WorkflowFullHistory.Shell.Framework.Commands
                         version.Version.Number, 
                         oldState, 
                         newState, 
-                        HttpUtility.HtmlEncode(workFlowEvent.Text));
+                        HttpUtility.HtmlEncode(string.Join(", ", workFlowEvent.CommentFields.Values)));
                 }
             }
 
@@ -93,7 +93,11 @@ namespace OneNorth.WorkflowFullHistory.Shell.Framework.Commands
             using (var reader = new StreamReader(stream))
                 popupHtml = reader.ReadToEnd();
 
-            Sitecore.Context.ClientPage.ClientResponse.ShowPopup(Guid.NewGuid().ToString(), "below", string.Format(popupHtml, html));
+            /*
+             * This is a total and complete hack. Due to a change in the Sitecore.js JavaScript (and in Sitecore 8.x the Browser.js) file, the unique identifier has to be a valid element within the current document.  If not, then the popup UI fails to display correctly. 
+             * To do this I am setting the id field to "__VIEWSTATE" since this will always exist in a ASP.Net application.
+             */
+            SheerResponse.ShowPopup("__VIEWSTATE", "below", string.Format(popupHtml, html));
         }
     }
 }
