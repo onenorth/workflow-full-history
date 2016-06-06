@@ -44,8 +44,9 @@
     <PackageAuthor>One North Interactive</PackageAuthor>
     <PackagePublisher>One North Interactive</PackagePublisher>
     <PackageReadme>See https://github.com/onenorth/workflow-full-history for further information</PackageReadme>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.1.0</PackageVersion>
     <SitecoreAssemblyPath>../../lib</SitecoreAssemblyPath>
+    <PackageExcludeCode>False</PackageExcludeCode>
   </PropertyGroup>
   <ItemGroup>
     <AssemblyAttributes Include="AssemblyFileVersion">
@@ -105,7 +106,7 @@
     <CreateProperty Value="%(AssemblyVersion.Version)">
       <Output TaskParameter="Value" PropertyName="PackageVersion" />
     </CreateProperty>
-	<CreateProperty Value="OneNorth.WorkflowFullHistory.%(AssemblyVersion.Version)">
+    <CreateProperty Value="OneNorth.WorkflowFullHistory.%(AssemblyVersion.Version)">
       <Output TaskParameter="Value" PropertyName="PackageName" />
     </CreateProperty>
   </Target>
