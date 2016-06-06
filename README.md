@@ -11,7 +11,7 @@ This module adds a **Full History** button to the **Workflow** group under the *
 Clicking the Full History button displays a pop-up with history for each version of the item.
 ![Full History Button](https://raw.github.com/onenorth/workflow-full-history/master/img/FullHistory.png)
 
-> This has been tested with Sitecore 6.6, 7.2, and 7.5
+> There are 2 versions of the Workflow Full History module.  One that supports Sitecore 6.6, 7.2, and 7.5, and another that supports Sitecore 8.1.  Please note the correct release when downloading.
 
 ## Installation
 
