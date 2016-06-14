@@ -9,7 +9,6 @@
 *.cs     text diff=csharp
 *.css    text
 *.html   text diff=html
-*.item   text
 *.js     text
 *.targets text
 *.tt     text
@@ -20,3 +19,6 @@
 
 # Declare files that will always have CRLF line endings on checkout.
 *.sln    text merge=union eol=crlf
+
+# Do not adjust line endings on Sitecore .item files
+*.item -text

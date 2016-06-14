@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -28,6 +29,24 @@
     <RecursiveDeployAction>Ignore</RecursiveDeployAction>
     <EnableValidations>False</EnableValidations>
     <ValidationSettingsFilePath>.\OneNorth.WorkflowFullHistory.Deploy.Core_Debug.xml</ValidationSettingsFilePath>
+    <NuGetGenerateNuGetPackage>True</NuGetGenerateNuGetPackage>
+    <NuGetExePath>..\packages\NuGet.CommandLine.3.4.3\tools</NuGetExePath>
+    <NuGetSummary />
+    <NuGetDescription>OneNorth.WorkflowFullHistory.TDS.Core</NuGetDescription>
+    <NuGetTitle>OneNorth.WorkflowFullHistory.TDS.Core</NuGetTitle>
+    <NuGetVersion>1.1.1</NuGetVersion>
+    <NuGetPackageId>OneNorth.WorkflowFullHistory.TDS.Core</NuGetPackageId>
+    <NuGetAuthors>One North Interactive</NuGetAuthors>
+    <NuGetOwners />
+    <NuGetCopyright />
+    <NuGetLicenseUrl />
+    <NuGetIconUrl />
+    <NuGetProjectUrl />
+    <NuGetTags />
+    <NuGetReleaseNotes />
+    <NuGetLanguage />
+    <NuGetRequireLicenseAcceptance>False</NuGetRequireLicenseAcceptance>
+    <NuGetDependencies />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugSymbols>false</DebugSymbols>
@@ -44,7 +63,7 @@
     <PackageAuthor>One North Interactive</PackageAuthor>
     <PackagePublisher>One North Interactive</PackagePublisher>
     <PackageReadme>See https://github.com/onenorth/workflow-full-history for further information</PackageReadme>
-    <PackageVersion>1.1.0</PackageVersion>
+    <PackageVersion>1.1.1</PackageVersion>
     <SitecoreAssemblyPath>../../lib</SitecoreAssemblyPath>
     <PackageExcludeCode>False</PackageExcludeCode>
   </PropertyGroup>
@@ -95,7 +114,7 @@
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" Condition="Exists('$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets')" />
   <ItemGroup>
     <AssembliesPath Include="..\Website\bin\OneNorth.WorkflowFullHistory.dll" />
   </ItemGroup>
